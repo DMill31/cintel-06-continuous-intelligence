@@ -151,6 +151,22 @@ git push -u origin main
 
 </details>
 
+## Technical Modification
+
+The modification for this repo takes the original cintel/continuous_intelligence_case.py script and adds a few things to it.
+
+First, the signals that were created in the original script are now rounded to two decimals.
+
+I found the decimals with 10+ digits to be an eyesore, so I added some rounding for a more concise output table.
+
+I also added another signal called status_reason.
+
+The original code has the signal system_state, so I added onto that by giving a reason for that state.
+
+For example, if the status is DEGRADED due to a high error rate, then under status_reason you would find "High error rate".
+
+I added this because I believe it would be easier to check these two columns if the status was DEGRADED rather than having to go through the whole table to find the problem.
+
 ## Notes
 
 - Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
