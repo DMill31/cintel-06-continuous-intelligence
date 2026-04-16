@@ -167,6 +167,14 @@ For example, if the status is DEGRADED due to a high error rate, then under stat
 
 I added this because I believe it would be easier to check these two columns if the status was DEGRADED rather than having to go through the whole table to find the problem.
 
+## Custom Project
+
+The custom project for this repo takes the system assessment and tries it on a different dataset.
+
+The dataset used is for a transit ride company over the span of 35 days.
+
+For a full description of the project, go [Here](https://dmill31.github.io/cintel-06-continuous-intelligence/#custom-project).
+
 ## Notes
 
 - Use the **UP ARROW** and **DOWN ARROW** in the terminal to scroll through past commands.
