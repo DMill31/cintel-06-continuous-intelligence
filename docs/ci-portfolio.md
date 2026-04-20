@@ -89,19 +89,64 @@ These bounds may need to be reconsidered if applied to a dataset much larger tha
 
 ### Repository Link
 
-(clickable link to your repository)
+[Project3](https://github.com/DMill31/cintel-03-signal-design)
 
 ### Signals
 
-(List the custom signals you created and why.)
+This project starts with the input data based on system metrics.
+
+The three columns of the original data are:
+
+- requests
+- errors
+- total_latency_ms
+
+For my code, however, a timestamp column was added to the input data.
+
+With that, 6 signals were created:
+
+- error_rate: How frequently errors occur
+  - A performance metric to see if the errors are high or low in frequency
+
+- avg_latency_ms: The average response time in milliseconds
+  - This puts each request into perspective and allows us to see if each request had an overall high, low, or normal latency
+
+- request_volume: Number of requests
+  - Can help with comprehension when next to throughput_rps
+
+- throughput_rps: Requests per second
+  - Performance metric of system efficiency
+
+- poor_experience: Flag for high error rate OR high average latency
+  - Allows us to easily flag and find poor system performance
+
+- hour_of_day: Hour of the day the observation took place
+  - Allows for visuals to be created and is a cleaner time compared to the timestamp
 
 ### Artifacts
 
-(clickable link to artifacts/ folder and explain result files)
+[Artifacts_Folder](https://github.com/DMill31/cintel-03-signal-design/tree/main/artifacts)
+
+There are three files in the artifacts folder:
+
+- signals_case.csv - the example output file
+- signals_miller.csv - the output file after a modification was made to the example
+- signals_custom_miller.csv - the output file that contains all 6 of the created signals
+
+Every row in the table returned "false" for poor_experience, implying that error rates and average latencies were all in normal ranges.
+
+Similarly, throughput_rps gave values between 29 and 40, which is another normal range.
 
 ### Insights
 
-(What did the signals reveal?)
+The signals show that the system is performing well.
+
+There was no poor performance flag and all metrics were found to be in normal ranges.
+
+The system can be kept as is as it's passing bare minimum standards.
+
+The system can still be made more efficient.  While not necessary, it would be for the best.
+
 
 ## 4. Rolling Monitoring
 
