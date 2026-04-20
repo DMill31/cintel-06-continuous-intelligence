@@ -18,10 +18,10 @@ This page summarizes my work on **continuous intelligence** projects.
 
 src/cintel/
   - Houses the scripts that run the continuous intelligence pipeline
-    
+
 data/
   - Where the input data is kept
-    
+
 artifacts/
   - Where the output data is kept
 
@@ -48,19 +48,42 @@ My addition to this project was extra error handling in case the paths were inco
 
 ### Repository Link
 
-(clickable link to your repository)
+[Project2](https://github.com/DMill31/cintel-02-static-anomalies)
 
 ### Techniques
 
-(Explain how anomalies were detected.)
+This project worked with data from a clinic's patient records.  The data contained two columns:
+
+- age_years: The age of the patient
+- height_inches: How tall the patient is in inches
+
+To detect anomalies, upper and lower bounds were set as thresholds.
+
+In this case, the upper bounds were 100 years for age and 6'2 for height.
+
+The lower bounds were 18 years for age and 4'8 for height.
+
+The script went through the data, and every row that was outside any of the bounds was detected as an anomaly.
 
 ### Artifacts
 
-(clickable link to artifacts/ folder and explain result files)
+[Artifacts_Folder](https://github.com/DMill31/cintel-02-static-anomalies/tree/main/artifacts)
+
+There are three files in the artifacts folder:
+
+- anomalies_case.csv - This is the example output file with the anomalies from the example input data.
+- anomalies_miller.csv - This is the true output file with the two anomalies that were detected.
+- anomalies_taxi.csv - This is an extra output file from taxi service input data (added for extra fun/practice).
+
+Of the two anomalies detected in anomalies_miller.csv, they were both age out-of-bounds with one patient being 102 years old and the other 118.
 
 ### Insights
 
-(What did this analysis reveal?)
+This means that the system can detect anomalies successfully when discussing older individuals.
+
+The fact that no anomalies were detected via height either means that there were no height anomalies or that the upper height bound was set too tall, but it is hard to say for such a small dataset.
+
+These bounds may need to be reconsidered if applied to a dataset much larger than 24 patients, as that dataset would be much more statistically significant and representative of the general population.
 
 ## 3. Signal Design
 
