@@ -234,16 +234,36 @@ If the entire system is shifting like this case, then it allows us to learn to l
 
 ### Repository Link
 
-(clickable link to your repository)
+[Project6](https://github.com/DMill31/cintel-06-continuous-intelligence)
 
 ### Techniques
 
-(Describe how signals and monitoring techniques were combined.)
+In this project, the techniques used in the previous 5 projects are all combined.
+
+First, signals are designed that then allow us to detect anomalies by comparing them to thresholds.
+
+Then a summary of the system state is created by looking at calculated metrics.
+
+If the calculated metrics are greater than the predefined thresholds, we say that the state is degraded.
+
+The original data is not time series, so no rolling monitoring is done.  There also isn't reference data so no drift detection is done either.
 
 ### Artifacts
 
-(clickable link to artifacts/ folder and explain result files)
+[Artifacts_Folder](https://github.com/DMill31/cintel-06-continuous-intelligence/tree/main/artifacts)
+
+There are three files in the artifacts folder:
+
+- system_assessment_case.csv - the example output file with calculated metrics and the system's state
+- system_assessment_miller.csv - the modified output file with a new added status reason that tells us why the state is in its current state
+- transit_assessment.csv - output data for a transit file that follows the same pattern as the original script
+
+The system assessments show averages of the columns while the transit data gives an average, a standard deviation, and a rolling z-score due to it being time-series data.
 
 ### Assessment
 
-(What does the pipeline say about the system state?)
+Both the system pipeline and the transit pipeline state that they are both stable.
+
+For the system, the average error rate of 0.03 and average latency of 33.71 are both very low, so neither reach the degraded threshold.
+
+As for the transit system, the average rolling z-score of 1.14 is also low, so similarly it does not reach the degraded threshold.
