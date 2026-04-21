@@ -152,19 +152,40 @@ The system can still be made more efficient.  While not necessary, it would be f
 
 ### Repository Link
 
-(clickable link to your repository)
+[Project4](https://github.com/DMill31/cintel-04-rolling-monitoring)
 
 ### Techniques
 
-(Explain how rolling windows were used.)
+The data for this project was time series data, so when calculating statistics, we used rolling windows.
+
+By only looking at a few adjacent rows to do calculations, we can see how these stats change over time, which can give us insights.
+
+For the base case, a window size of 3 was used, meaning that three rows were compared at a time.  Rolling means and standard deviations were calculated for the modification.
+
+When discussing the custom project, rolling sum and coefficient of variation were also calculated using a window size of 5.
 
 ### Artifacts
 
-(clickable link to artifacts/ folder and explain result files)
+[Artifacts_Folder](https://github.com/DMill31/cintel-04-rolling-monitoring/tree/main/artifacts)
+
+There are four files in the artifacts folder:
+
+- rolling_metrics_case.csv - the example output file with rolling mean
+- rolling_metrics_miller.csv - the modified output file with rolling mean and standard deviation
+- rolling_metrics_transit_miller.csv - the custom project output file with rolling mean, standard deviation, sum, and coefficient of variation
+- rolling_plot_transit_miller.png - Plot of rolling mean vs coefficient of variation
+
+The results of the custom project show a positive trend of increasing rides.  We also see a jump in data from days 15-20.
+
+![rolling_plot](rolling_plot_transit_miller.png)
 
 ### Insights
 
-(What patterns appeared?)
+While there is generally a steady increase in rides over time, between days 10-19, a there was a great surge of riders.
+
+If the data were to of continued being taken, that steady increase of riders would have continued.
+
+Demand for rides is increasing, so it would be profitable for ride companies to make rides more convenient to access as well as increasing the price of each ride.
 
 ## 5. Drift Detection
 
