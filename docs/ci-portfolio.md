@@ -191,19 +191,44 @@ Demand for rides is increasing, so it would be profitable for ride companies to 
 
 ### Repository Link
 
-(clickable link to your repository)
+[Project5](https://github.com/DMill31/cintel-05-drift-detection)
 
 ### Techniques
 
-(Explain how reference and current periods were compared.)
+In this project, we started with two input datasets.
+
+One dataset contained reference data that we would consider normal.  The other data is current data that we compare to the norm to see if there are any differences.
+
+The mean difference for each numeric column is calculated and compared to a difference threshold.  If the difference is greater than the magnitude of the threshold, we flag that column as drifting.
 
 ### Artifacts
 
-(clickable link to artifacts/ folder and explain result files)
+[Artifacts_Folder](https://github.com/DMill31/cintel-05-drift-detection/tree/main/artifacts)
+
+There are four files in the artifacts folder:
+
+- drift_summary_case.csv - the example output file that contains reference data, current data, differences, and flags
+- drift_summary_long_case.csv - the same file as above but formatted vertically
+- drift_summary_miller.csv - the modified output file that now also includes standard deviation differences and percent changes
+- drift_summary_long_miller.csv - the same file as above but formatted vertically
+
+The first few rows of the long output file contains the reference file's statistics.  The next few rows contain the current data's statistics.
+
+After those rows, the difference between the statistics is shown, and in my file the percent change between these statistics is also given.
+
+Lastly, the flags for drifting are at the end with either a "True" or "False" depending on if the data is drifting.
+
+With this data, every column was drifting.
 
 ### Insights
 
-(What changed? How do you know? How does this help make actionable decisions?)
+The entire system experienced a uniform shift.
+
+While all columns increased, the spread stayed roughly the same, given the smaller change in standard deviations.
+
+Detecting drift allows us to see what exactly is drifting so we can target that specific metric to get it back into a normal range.
+
+If the entire system is shifting like this case, then it allows us to learn to look at the system as a whole.
 
 ## 6. Continuous Intelligence Pipeline
 
